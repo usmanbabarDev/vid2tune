@@ -2,7 +2,7 @@
 <html lang="ur" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>آڈیو ٹرمر — MP3 یا ویڈیو کی آواز آن لائن کاٹیں | vid2tune</title>
 <meta name="description" content="آڈیو یا ویڈیو کی آواز آن لائن کاٹیں۔ ویوفارم پر شروع اور اختتام چنیں، فیڈ شامل کریں اور MP3 یا WAV محفوظ کریں۔ مفت، بغیر اپ لوڈ۔">
 <link rel="canonical" href="https://vid2tune.com/ur/audio-trimmer/">
@@ -17,24 +17,33 @@
 <meta property="og:description" content="آڈیو یا ویڈیو کی آواز آن لائن کاٹیں۔ ویوفارم پر شروع اور اختتام چنیں، فیڈ شامل کریں اور MP3 یا WAV محفوظ کریں۔ مفت، بغیر اپ لوڈ۔">
 <meta property="og:url" content="https://vid2tune.com/ur/audio-trimmer/">
 <meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#5b3df5">
+<meta name="theme-color" content="#f6f5fb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b0a12" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/style.css?v=0e9dcacf">
+<link rel="stylesheet" href="/assets/style.css?v=6f54ae74">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"آڈیو ٹرمر — vid2tune","url":"https://vid2tune.com/ur/audio-trimmer/","inLanguage":"ur","applicationCategory":"MultimediaApplication","operatingSystem":"Any (web browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"کیا میری فائلیں سرور پر اپ لوڈ ہوتی ہیں؟","acceptedAnswer":{"@type":"Answer","text":"نہیں۔ vid2tune سب کچھ آپ کے براؤزر میں کنورٹ کرتا ہے۔ آپ کی ویڈیو آپ کے ڈیوائس سے باہر نہیں جاتی، اس لیے نہ اپ لوڈ کا انتظار اور نہ کوئی قطار۔"}},{"@type":"Question","name":"کیا vid2tune مفت ہے؟","acceptedAnswer":{"@type":"Answer","text":"جی ہاں۔ تمام ٹولز مفت ہیں — نہ سائن اپ، نہ واٹر مارک۔"}},{"@type":"Question","name":"کون سے فارمیٹس کنورٹ ہو سکتے ہیں؟","acceptedAnswer":{"@type":"Answer","text":"MP4، MOV، M4V، WebM، M4A، MP3، WAV، OGG، Opus اور FLAC تمام جدید براؤزرز میں چلتے ہیں۔ کچھ کم عام کوڈیکس براؤزر پر منحصر ہیں — Chrome اور Edge سب سے زیادہ سپورٹ کرتے ہیں۔"}},{"@type":"Question","name":"کیا اس سے YouTube یا دوسری سائٹس سے ڈاؤن لوڈ ہو سکتا ہے؟","acceptedAnswer":{"@type":"Answer","text":"نہیں۔ vid2tune صرف وہ فائلیں کنورٹ کرتا ہے جو پہلے سے آپ کے ڈیوائس پر ہیں۔ براہ کرم صرف اپنا یا اجازت یافتہ مواد کنورٹ کریں۔"}}]}</script>
 <!-- Ads: once AdSense approves the site, paste its <script> tag here and fill /ads.txt. -->
 </head>
 <body>
+<div class="bg-glow" aria-hidden="true"></div>
 <header class="site-header">
   <div class="wrap">
-    <a class="logo" href="/ur/" aria-label="vid2tune ہوم"><svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#5b3df5"/><path d="M11 9.5v13l6.5-6.5z" fill="#fff"/><path d="M20 11v9.2a2.3 2.3 0 1 1-1.4-2.1V11z" fill="#fff" opacity=".85"/></svg><span class="wordmark" dir="ltr">vid<span>2</span>tune</span></a>
+    <a class="logo" href="/ur/" aria-label="vid2tune ہوم"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d4aff"/><stop offset=".55" stop-color="#b44dff"/><stop offset="1" stop-color="#ff4f8b"/></linearGradient></defs><rect width="32" height="32" rx="10" fill="url(#lg)"/><path d="M11 9.5v13l6.5-6.5z" fill="#fff"/><path d="M20 11v9.2a2.3 2.3 0 1 1-1.4-2.1V11z" fill="#fff" opacity=".85"/></svg><span class="wordmark" dir="ltr">vid<span>2</span>tune</span></a>
     <nav class="nav" aria-label="Tools"><a href="/ur/">ڈاؤن لوڈر</a><a href="/ur/mp4-to-mp3/">MP4 سے MP3</a><a href="/ur/batch-mp4-to-mp3/">بیچ</a><a href="/ur/audio-trimmer/" aria-current="page">ٹرمر</a><a href="/ur/ringtone-maker/">رنگ ٹون</a></nav>
-    <nav class="langs" aria-label="Language"><a href="/audio-trimmer/" hreflang="en" lang="en">English</a><a href="/ur/audio-trimmer/" hreflang="ur" lang="ur" aria-current="true">اردو</a><a href="/hi/audio-trimmer/" hreflang="hi" lang="hi">हिन्दी</a><a href="/ar/audio-trimmer/" hreflang="ar" lang="ar">العربية</a></nav>
+    <details class="lang-menu">
+      <summary aria-label="زبان"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg><span>UR</span></summary>
+      <nav class="lang-list" aria-label="زبان"><a href="/audio-trimmer/" hreflang="en" lang="en">English</a><a href="/ur/audio-trimmer/" hreflang="ur" lang="ur" aria-current="true">اردو</a><a href="/hi/audio-trimmer/" hreflang="hi" lang="hi">हिन्दी</a><a href="/ar/audio-trimmer/" hreflang="ar" lang="ar">العربية</a></nav>
+    </details>
   </div>
 </header>
 <main>
 <div class="wrap">
   <section class="hero">
+    <span class="hero-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9"/><path d="M14.5 14.5 20 20"/><path d="M8.1 8.1 12 12"/></svg></span>
     <h1>آڈیو ٹرمر</h1>
     <p>کسی بھی آڈیو یا ویڈیو فائل سے بالکل وہی حصہ کاٹیں جو آپ کو چاہیے، فیڈ اِن اور فیڈ آؤٹ کے ساتھ۔</p>
     <div class="badges"><span class="badge">مفت</span><span class="badge">اپ لوڈ نہیں</span><span class="badge">سائن اپ نہیں</span><span class="badge">واٹر مارک نہیں</span></div>
@@ -42,7 +51,7 @@
   <section class="tool" data-tool data-mode="trim" data-format="mp3" data-ringtone="0" aria-label="Converter">
   <label class="dropzone" for="file-input">
     <input id="file-input" class="visually-hidden" type="file" accept="video/*,audio/*,.mp4,.m4v,.mov,.webm,.m4a,.mp3,.wav,.ogg,.oga,.opus,.flac,.aac">
-    <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg>
+    <span class="dz-bubble"><svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg></span>
     <span class="dz-title">آڈیو یا ویڈیو فائل منتخب کریں</span>
     <span class="dz-sub">MP4، MOV، WebM، M4A، MP3، WAV اور مزید · فائل آپ کے ڈیوائس پر ہی رہتی ہے</span>
   </label>
@@ -74,13 +83,13 @@
 <p class="privacy-note">🔒 آپ کے براؤزر میں ہی کنورٹ ہوتا ہے — کچھ بھی اپ لوڈ نہیں ہوتا۔</p>
   <article class="content">
     <h2>یہ کیسے کام کرتا ہے</h2>
-    <ol class="steps"><li><strong>فائل کھولیں</strong>آڈیو یا ویڈیو — MP3، M4A، WAV، MP4 اور مزید۔</li><li><strong>حصہ منتخب کریں</strong>سلائیڈرز کھینچیں یا ویوفارم پر ٹیپ کریں، پھر چلا کر سنیں۔</li><li><strong>ایکسپورٹ کریں</strong>کلپ کو MP3 یا WAV میں محفوظ کریں۔</li></ol>
+    <ol class="steps"><li><strong>فائل کھولیں</strong><span>آڈیو یا ویڈیو — MP3، M4A، WAV، MP4 اور مزید۔</span></li><li><strong>حصہ منتخب کریں</strong><span>سلائیڈرز کھینچیں یا ویوفارم پر ٹیپ کریں، پھر چلا کر سنیں۔</span></li><li><strong>ایکسپورٹ کریں</strong><span>کلپ کو MP3 یا WAV میں محفوظ کریں۔</span></li></ol>
     <h2>اس ٹول کے بارے میں</h2>
     <p>ویوفارم پر ٹیپ کرنے سے انتخاب کا قریبی کنارہ وہاں آ جاتا ہے، اور باریک کنٹرول کے لیے سلائیڈرز استعمال کریں۔ صاف آغاز اور اختتام کے لیے فیڈ اِن یا فیڈ آؤٹ لگائیں۔</p>
     <h2>اکثر پوچھے گئے سوالات</h2>
     <div class="faq"><details><summary>کیا میری فائلیں سرور پر اپ لوڈ ہوتی ہیں؟</summary><p>نہیں۔ vid2tune سب کچھ آپ کے براؤزر میں کنورٹ کرتا ہے۔ آپ کی ویڈیو آپ کے ڈیوائس سے باہر نہیں جاتی، اس لیے نہ اپ لوڈ کا انتظار اور نہ کوئی قطار۔</p></details><details><summary>کیا vid2tune مفت ہے؟</summary><p>جی ہاں۔ تمام ٹولز مفت ہیں — نہ سائن اپ، نہ واٹر مارک۔</p></details><details><summary>کون سے فارمیٹس کنورٹ ہو سکتے ہیں؟</summary><p>MP4، MOV، M4V، WebM، M4A، MP3، WAV، OGG، Opus اور FLAC تمام جدید براؤزرز میں چلتے ہیں۔ کچھ کم عام کوڈیکس براؤزر پر منحصر ہیں — Chrome اور Edge سب سے زیادہ سپورٹ کرتے ہیں۔</p></details><details><summary>کیا اس سے YouTube یا دوسری سائٹس سے ڈاؤن لوڈ ہو سکتا ہے؟</summary><p>نہیں۔ vid2tune صرف وہ فائلیں کنورٹ کرتا ہے جو پہلے سے آپ کے ڈیوائس پر ہیں۔ براہ کرم صرف اپنا یا اجازت یافتہ مواد کنورٹ کریں۔</p></details></div>
     <h2>مزید مفت ٹولز</h2>
-    <nav class="tools-grid" aria-label="مزید مفت ٹولز"><a href="/ur/">ویڈیو ڈاؤن لوڈر<span>لنک پیسٹ کریں، MP4 یا MP3 لیں</span></a><a href="/ur/mp4-to-mp3/">MP4 سے MP3<span>ویڈیو کو MP3 میں بدلیں</span></a><a href="/ur/batch-mp4-to-mp3/">بیچ MP4 سے MP3<span>ایک ساتھ کئی ویڈیوز</span></a><a href="/ur/ringtone-maker/">رنگ ٹون میکر<span>فیڈ کے ساتھ 30 سیکنڈ کی رنگ ٹون</span></a></nav>
+    <nav class="tools-grid" aria-label="مزید مفت ٹولز"><a href="/ur/"><span class="tile-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg></span><strong>ویڈیو ڈاؤن لوڈر</strong><span>لنک پیسٹ کریں، MP4 یا MP3 لیں</span></a><a href="/ur/mp4-to-mp3/"><span class="tile-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg></span><strong>MP4 سے MP3</strong><span>ویڈیو کو MP3 میں بدلیں</span></a><a href="/ur/batch-mp4-to-mp3/"><span class="tile-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/><path d="m3 17.5 9 5 9-5"/></svg></span><strong>بیچ MP4 سے MP3</strong><span>ایک ساتھ کئی ویڈیوز</span></a><a href="/ur/ringtone-maker/"><span class="tile-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg></span><strong>رنگ ٹون میکر</strong><span>فیڈ کے ساتھ 30 سیکنڈ کی رنگ ٹون</span></a></nav>
   </article>
 </div>
 </main>
@@ -90,7 +99,8 @@
     <nav aria-label="Site"><a href="/about/">تعارف</a><a href="/privacy/">پرائیویسی</a><a href="/terms/">شرائط</a><a href="mailto:hello@vid2tune.com">رابطہ</a></nav>
   </div>
 </footer>
+<nav class="tabbar" aria-label="Tools"><a href="/ur/"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span>ڈاؤن لوڈر</span></a><a href="/ur/mp4-to-mp3/"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg><span>MP4 سے MP3</span></a><a href="/ur/batch-mp4-to-mp3/"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/><path d="m3 17.5 9 5 9-5"/></svg><span>بیچ</span></a><a href="/ur/audio-trimmer/" aria-current="page"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9"/><path d="M14.5 14.5 20 20"/><path d="M8.1 8.1 12 12"/></svg><span>ٹرمر</span></a><a href="/ur/ringtone-maker/"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg><span>رنگ ٹون</span></a></nav>
 <script>window.V2T_I18N = {"convertTo":"{fmt} میں کنورٹ کریں","exportAs":"{fmt} ایکسپورٹ کریں","ready":"کنورٹ کے لیے تیار","tooBig":"یہ فائل 2 GB سے بڑی ہے — براؤزر میں کنورٹ کرنے کے لیے بہت بڑی۔","reading":"آڈیو پڑھی جا رہی ہے…","encoding":"انکوڈنگ… {pct}%","download":"{fmt} ڈاؤن لوڈ کریں","done":"مکمل · {size} · {dur}","loadingWave":"ویوفارم لوڈ ہو رہا ہے…","trimHint":"{dur} لمبی · جو حصہ رکھنا ہے اسے سلائیڈرز سے منتخب کریں","selected":"{len} منتخب","play":"منتخب حصہ چلائیں","stop":"روکیں","downloadAll":"سب ڈاؤن لوڈ کریں (ZIP)","zipping":"ZIP تیار ہو رہی ہے…","fetching":"ویڈیو لائی جا رہی ہے…","preparing":"آپ کی {fmt} تیار ہو رہی ہے… اس میں ایک منٹ تک لگ سکتا ہے۔","downloadingPct":"ڈاؤن لوڈ ہو رہی ہے… {pct}%","saved":"محفوظ ہو گئی: {name}","offline":"ڈاؤن لوڈ سروس ابھی دستیاب نہیں۔ براہ کرم بعد میں کوشش کریں۔","err_bad_url":"یہ لنک درست نہیں لگتا۔ پورا لنک کاپی کر کے دوبارہ کوشش کریں۔","err_youtube":"YouTube لنکس سپورٹ نہیں ہیں۔","err_unsupported":"یہ سائٹ ابھی سپورٹ نہیں ہے۔ TikTok، Instagram، Facebook، X، Pinterest یا Reddit آزمائیں۔","err_private":"یہ پوسٹ پرائیویٹ ہے یا لاگ اِن مانگتی ہے، اس لیے ڈاؤن لوڈ نہیں ہو سکتی۔","err_too_big":"یہ ویڈیو یہاں ڈاؤن لوڈ کرنے کے لیے بہت بڑی ہے۔","err_no_video":"اس لنک پر کوئی ڈاؤن لوڈ کے قابل ویڈیو نہیں ملی۔","err_gone":"لگتا ہے یہ پوسٹ ہٹا دی گئی ہے۔","err_busy":"سرور مصروف ہے — ایک منٹ بعد دوبارہ کوشش کریں۔","err_rate":"بہت زیادہ درخواستیں — چند منٹ انتظار کریں۔","err_timeout":"سائٹ نے جواب دینے میں بہت دیر لگائی۔ دوبارہ کوشش کریں۔","err_no_ytdlp":"ڈاؤن لوڈ سروس ابھی دستیاب نہیں۔ براہ کرم بعد میں کوشش کریں۔","err_blocked":"یہ سائٹ ہمارے سرور کے علاقے سے اس پوسٹ کی ڈاؤن لوڈ روکتی ہے۔ کوئی اور پوسٹ آزمائیں۔","err_failed":"یہ ویڈیو نہیں لائی جا سکی۔ بعد میں کوشش کریں۔","errDecode":"اس فائل سے آڈیو نہیں پڑھی جا سکی۔ ہو سکتا ہے اس میں آواز نہ ہو یا یہ براؤزر اس کوڈیک کو نہ کھول سکے — Chrome یا Edge آزمائیں۔","errMemory":"یہ فائل آپ کے ڈیوائس کی میموری کے لیے بہت لمبی ہے۔ چھوٹا کلپ آزمائیں۔","errGeneric":"کنورژن ناکام: {msg}"};</script>
-<script src="/assets/app.js?v=0e9dcacf" defer></script>
+<script src="/assets/app.js?v=6f54ae74" defer></script>
 </body>
 </html>

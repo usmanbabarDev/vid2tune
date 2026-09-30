@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Video Downloader — Save TikTok, Instagram &amp; Facebook Videos as MP4 or MP3 | vid2tune</title>
 <meta name="description" content="Paste a TikTok, Instagram, Facebook, X or Pinterest link and download the video as MP4 or just the audio as MP3. Free, no sign-up, no watermark added.">
 <link rel="canonical" href="https://vid2tune.com/">
@@ -17,24 +17,33 @@
 <meta property="og:description" content="Paste a TikTok, Instagram, Facebook, X or Pinterest link and download the video as MP4 or just the audio as MP3. Free, no sign-up, no watermark added.">
 <meta property="og:url" content="https://vid2tune.com/">
 <meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#5b3df5">
+<meta name="theme-color" content="#f6f5fb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b0a12" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/style.css?v=0e9dcacf">
+<link rel="stylesheet" href="/assets/style.css?v=6f54ae74">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Video Downloader — vid2tune","url":"https://vid2tune.com/","inLanguage":"en","applicationCategory":"MultimediaApplication","operatingSystem":"Any (web browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which sites are supported?","acceptedAnswer":{"@type":"Answer","text":"TikTok, Instagram, Facebook, X (Twitter), Pinterest, Reddit, Dailymotion, Threads and SoundCloud. YouTube is not supported."}},{"@type":"Question","name":"Why did my link fail?","acceptedAnswer":{"@type":"Answer","text":"Private posts, stories and anything that needs a login can’t be downloaded. Check that the post is public and the link is complete."}},{"@type":"Question","name":"Do you keep a copy of the video?","acceptedAnswer":{"@type":"Answer","text":"No. The video is fetched, sent to you and deleted from our server straight away."}},{"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes — no sign-up and no watermark added."}}]}</script>
 <!-- Ads: once AdSense approves the site, paste its <script> tag here and fill /ads.txt. -->
 </head>
 <body>
+<div class="bg-glow" aria-hidden="true"></div>
 <header class="site-header">
   <div class="wrap">
-    <a class="logo" href="/" aria-label="vid2tune home"><svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#5b3df5"/><path d="M11 9.5v13l6.5-6.5z" fill="#fff"/><path d="M20 11v9.2a2.3 2.3 0 1 1-1.4-2.1V11z" fill="#fff" opacity=".85"/></svg><span class="wordmark" dir="ltr">vid<span>2</span>tune</span></a>
+    <a class="logo" href="/" aria-label="vid2tune home"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d4aff"/><stop offset=".55" stop-color="#b44dff"/><stop offset="1" stop-color="#ff4f8b"/></linearGradient></defs><rect width="32" height="32" rx="10" fill="url(#lg)"/><path d="M11 9.5v13l6.5-6.5z" fill="#fff"/><path d="M20 11v9.2a2.3 2.3 0 1 1-1.4-2.1V11z" fill="#fff" opacity=".85"/></svg><span class="wordmark" dir="ltr">vid<span>2</span>tune</span></a>
     <nav class="nav" aria-label="Tools"><a href="/" aria-current="page">Downloader</a><a href="/mp4-to-mp3/">MP4 to MP3</a><a href="/batch-mp4-to-mp3/">Batch</a><a href="/audio-trimmer/">Trimmer</a><a href="/ringtone-maker/">Ringtone</a></nav>
-    <nav class="langs" aria-label="Language"><a href="/" hreflang="en" lang="en" aria-current="true">English</a><a href="/ur/" hreflang="ur" lang="ur">اردو</a><a href="/hi/" hreflang="hi" lang="hi">हिन्दी</a><a href="/ar/" hreflang="ar" lang="ar">العربية</a></nav>
+    <details class="lang-menu">
+      <summary aria-label="Language"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg><span>EN</span></summary>
+      <nav class="lang-list" aria-label="Language"><a href="/" hreflang="en" lang="en" aria-current="true">English</a><a href="/ur/" hreflang="ur" lang="ur">اردو</a><a href="/hi/" hreflang="hi" lang="hi">हिन्दी</a><a href="/ar/" hreflang="ar" lang="ar">العربية</a></nav>
+    </details>
   </div>
 </header>
 <main>
 <div class="wrap">
   <section class="hero">
+    <span class="hero-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg></span>
     <h1>Video Downloader</h1>
     <p>Paste a link from TikTok, Instagram, Facebook, X and more — get the video as MP4 or the sound as MP3.</p>
     <div class="badges"><span class="badge">Free</span><span class="badge">No sign-up</span><span class="badge">No watermark added</span><span class="badge">MP4 + MP3</span></div>
@@ -42,8 +51,11 @@
   <section class="tool" data-link-tool data-api="http://localhost:8787" aria-label="Video link">
   <form class="link-form" novalidate>
     <label class="visually-hidden" for="link-url">Video link</label>
-    <input id="link-url" type="url" inputmode="url" autocomplete="off" placeholder="Paste a TikTok, Instagram, Facebook or X link" required>
-    <button type="submit" class="btn-primary">Get video</button>
+    <div class="link-field">
+      <input id="link-url" type="url" inputmode="url" autocomplete="off" enterkeyhint="go" placeholder="Paste a video link" required>
+      <button type="button" class="link-paste" hidden><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="3" width="8" height="4" rx="1"/><path d="M16 5h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2"/></svg><span>Paste</span></button>
+    </div>
+    <button type="submit" class="btn-primary"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span>Get video</span></button>
   </form>
   <p class="link-sites">Works with TikTok · Instagram · Facebook · X · Pinterest · Reddit — not YouTube</p>
   <p class="link-offline" hidden>The link downloader is being set up and isn’t available yet. <a href="/mp4-to-mp3/">Convert a video file to MP3 instead →</a></p>
@@ -68,14 +80,14 @@
 <p class="privacy-note">🔒 We fetch the public video and hand it straight to you — nothing is stored.</p>
   <article class="content">
     <h2>How it works</h2>
-    <ol class="steps"><li><strong>Copy the link</strong>Tap Share → Copy link in the app.</li><li><strong>Paste it here</strong>We find the video and show a preview.</li><li><strong>Pick MP4 or MP3</strong>Choose the quality and save it to your device.</li></ol>
+    <ol class="steps"><li><strong>Copy the link</strong><span>Tap Share → Copy link in the app.</span></li><li><strong>Paste it here</strong><span>We find the video and show a preview.</span></li><li><strong>Pick MP4 or MP3</strong><span>Choose the quality and save it to your device.</span></li></ol>
     <h2>About this tool</h2>
     <p>Save your own Reels, TikToks and posts to repost, edit or back up — or grab just the audio as an MP3. Only public posts can be downloaded.</p>
 <p><strong>Please respect creators:</strong> download only your own content or content you have permission to use.</p>
     <h2>Frequently asked questions</h2>
     <div class="faq"><details><summary>Which sites are supported?</summary><p>TikTok, Instagram, Facebook, X (Twitter), Pinterest, Reddit, Dailymotion, Threads and SoundCloud. YouTube is not supported.</p></details><details><summary>Why did my link fail?</summary><p>Private posts, stories and anything that needs a login can’t be downloaded. Check that the post is public and the link is complete.</p></details><details><summary>Do you keep a copy of the video?</summary><p>No. The video is fetched, sent to you and deleted from our server straight away.</p></details><details><summary>Is it free?</summary><p>Yes — no sign-up and no watermark added.</p></details></div>
     <h2>More free tools</h2>
-    <nav class="tools-grid" aria-label="More free tools"><a href="/mp4-to-mp3/">MP4 to MP3<span>Convert a video to MP3</span></a><a href="/batch-mp4-to-mp3/">Batch MP4 to MP3<span>Convert many videos at once</span></a><a href="/extract-audio-from-video/">Extract audio<span>Pull the sound out of any video</span></a><a href="/video-to-wav/">Video to WAV<span>Lossless audio for editing</span></a><a href="/mov-to-mp3/">MOV to MP3<span>iPhone and Mac videos</span></a><a href="/webm-to-mp3/">WebM to MP3<span>Screen and web recordings</span></a><a href="/audio-trimmer/">Audio trimmer<span>Cut a clip from audio or video</span></a><a href="/ringtone-maker/">Ringtone maker<span>30-second ringtones with fades</span></a></nav>
+    <nav class="tools-grid" aria-label="More free tools"><a href="/mp4-to-mp3/"><span class="tile-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg></span><strong>MP4 to MP3</strong><span>Convert a video to MP3</span></a><a href="/batch-mp4-to-mp3/"><span class="tile-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/><path d="m3 17.5 9 5 9-5"/></svg></span><strong>Batch MP4 to MP3</strong><span>Convert many videos at once</span></a><a href="/extract-audio-from-video/"><span class="tile-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h2"/><path d="M7 8v8"/><path d="M11 5v14"/><path d="M15 9v6"/><path d="M19 11v2"/></svg></span><strong>Extract audio</strong><span>Pull the sound out of any video</span></a><a href="/video-to-wav/"><span class="tile-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h3l2-6 4 12 3-9 2 3h4"/></svg></span><strong>Video to WAV</strong><span>Lossless audio for editing</span></a><a href="/mov-to-mp3/"><span class="tile-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><strong>MOV to MP3</strong><span>iPhone and Mac videos</span></a><a href="/webm-to-mp3/"><span class="tile-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg></span><strong>WebM to MP3</strong><span>Screen and web recordings</span></a><a href="/audio-trimmer/"><span class="tile-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9"/><path d="M14.5 14.5 20 20"/><path d="M8.1 8.1 12 12"/></svg></span><strong>Audio trimmer</strong><span>Cut a clip from audio or video</span></a><a href="/ringtone-maker/"><span class="tile-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg></span><strong>Ringtone maker</strong><span>30-second ringtones with fades</span></a></nav>
   </article>
 </div>
 </main>
@@ -85,7 +97,8 @@
     <nav aria-label="Site"><a href="/about/">About</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="mailto:hello@vid2tune.com">Contact</a></nav>
   </div>
 </footer>
+<nav class="tabbar" aria-label="Tools"><a href="/" aria-current="page"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span>Downloader</span></a><a href="/mp4-to-mp3/"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg><span>MP4 to MP3</span></a><a href="/batch-mp4-to-mp3/"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/><path d="m3 17.5 9 5 9-5"/></svg><span>Batch</span></a><a href="/audio-trimmer/"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9"/><path d="M14.5 14.5 20 20"/><path d="M8.1 8.1 12 12"/></svg><span>Trimmer</span></a><a href="/ringtone-maker/"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg><span>Ringtone</span></a></nav>
 <script>window.V2T_I18N = {"convertTo":"Convert to {fmt}","exportAs":"Export {fmt}","ready":"Ready to convert","tooBig":"This file is over 2 GB — too large to convert in a browser.","reading":"Reading audio…","encoding":"Encoding… {pct}%","download":"Download {fmt}","done":"Done · {size} · {dur}","loadingWave":"Loading waveform…","trimHint":"{dur} long · drag the sliders to pick the part to keep","selected":"{len} selected","play":"Play selection","stop":"Stop","downloadAll":"Download all (ZIP)","zipping":"Preparing ZIP…","fetching":"Fetching video…","preparing":"Preparing your {fmt}… this can take up to a minute.","downloadingPct":"Downloading… {pct}%","saved":"Saved: {name}","offline":"The download service is offline right now. Please try again later.","err_bad_url":"That doesn’t look like a link. Copy the full address and try again.","err_youtube":"YouTube links aren’t supported.","err_unsupported":"This site isn’t supported yet. Try TikTok, Instagram, Facebook, X, Pinterest or Reddit.","err_private":"This post is private or needs a login, so it can’t be downloaded.","err_too_big":"This video is too large to download here.","err_no_video":"No downloadable video was found at that link.","err_gone":"That post seems to have been removed.","err_busy":"The server is busy — please try again in a minute.","err_rate":"Too many requests — please wait a few minutes.","err_timeout":"The site took too long to respond. Please try again.","err_no_ytdlp":"The download service is offline right now. Please try again later.","err_blocked":"This site blocks downloads of this post from our server’s region. Try another post.","err_failed":"Couldn’t fetch that video. Please try again later.","errDecode":"Couldn’t read audio from this file. It may have no sound track, or use a codec this browser can’t open — try Chrome or Edge.","errMemory":"This file is too long for your device’s memory. Try a shorter clip.","errGeneric":"Conversion failed: {msg}"};</script>
-<script src="/assets/link.js?v=0e9dcacf" defer></script>
+<script src="/assets/link.js?v=6f54ae74" defer></script>
 </body>
 </html>

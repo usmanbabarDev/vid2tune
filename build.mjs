@@ -93,7 +93,23 @@ const has = (lang, key) => Boolean(LANGS[lang].pages[key]);
 const safeJson = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
 
 const ICON_UPLOAD = `<svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg>`;
-const LOGO = `<svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#5b3df5"/><path d="M11 9.5v13l6.5-6.5z" fill="#fff"/><path d="M20 11v9.2a2.3 2.3 0 1 1-1.4-2.1V11z" fill="#fff" opacity=".85"/></svg>`;
+const LOGO = `<svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d4aff"/><stop offset=".55" stop-color="#b44dff"/><stop offset="1" stop-color="#ff4f8b"/></linearGradient></defs><rect width="32" height="32" rx="10" fill="url(#lg)"/><path d="M11 9.5v13l6.5-6.5z" fill="#fff"/><path d="M20 11v9.2a2.3 2.3 0 1 1-1.4-2.1V11z" fill="#fff" opacity=".85"/></svg>`;
+
+// Line icons (24px grid, stroked with currentColor) for tools and UI.
+const PATHS = {
+  download: '<path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>',
+  mp4mp3: '<path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/>',
+  batch: '<path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/><path d="m3 17.5 9 5 9-5"/>',
+  trim: '<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9"/><path d="M14.5 14.5 20 20"/><path d="M8.1 8.1 12 12"/>',
+  ringtone: '<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/>',
+  extract: '<path d="M3 12h2"/><path d="M7 8v8"/><path d="M11 5v14"/><path d="M15 9v6"/><path d="M19 11v2"/>',
+  wav: '<path d="M3 12h3l2-6 4 12 3-9 2 3h4"/>',
+  mov: '<rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/>',
+  webm: '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/>',
+  globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/>',
+  paste: '<rect x="8" y="3" width="8" height="4" rx="1"/><path d="M16 5h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2"/>',
+};
+const icon = (name, cls = 'ico') => `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${PATHS[name]}</svg>`;
 
 /* ---------- templates ---------- */
 
@@ -104,6 +120,11 @@ function layout({ lang = 'en', key = null, path, title, description, main, jsonL
   const nav = NAV_KEYS.map((k) => {
     const href = pathFor(lang, k);
     return `<a href="${href}"${href === path ? ' aria-current="page"' : ''}>${esc(L.ui.nav[k])}</a>`;
+  }).join('');
+
+  const tabs = NAV_KEYS.map((k) => {
+    const href = pathFor(lang, k);
+    return `<a href="${href}"${href === path ? ' aria-current="page"' : ''}>${icon(k)}<span>${esc(L.ui.nav[k])}</span></a>`;
   }).join('');
 
   const langLinks = Object.keys(LANGS).map((code) => {
@@ -124,7 +145,7 @@ function layout({ lang = 'en', key = null, path, title, description, main, jsonL
 <html lang="${lang}" dir="${L.meta.dir}">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${url}">
@@ -135,18 +156,26 @@ ${alternates}
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${url}">
 <meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#5b3df5">
+<meta name="theme-color" content="#f6f5fb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b0a12" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/style.css">
 ${ld}
 <!-- Ads: once AdSense approves the site, paste its <script> tag here and fill /ads.txt. -->
 </head>
 <body>
+<div class="bg-glow" aria-hidden="true"></div>
 <header class="site-header">
   <div class="wrap">
     <a class="logo" href="${prefix(lang)}" aria-label="${esc(u.home)}">${LOGO}<span class="wordmark" dir="ltr">vid<span>2</span>tune</span></a>
     <nav class="nav" aria-label="Tools">${nav}</nav>
-    <nav class="langs" aria-label="Language">${langLinks}</nav>
+    <details class="lang-menu">
+      <summary aria-label="${esc(u.language)}">${icon('globe')}<span>${lang.toUpperCase()}</span></summary>
+      <nav class="lang-list" aria-label="${esc(u.language)}">${langLinks}</nav>
+    </details>
   </div>
 </header>
 <main>
@@ -158,6 +187,7 @@ ${main}
     <nav aria-label="Site"><a href="/about/">${esc(u.about)}</a><a href="/privacy/">${esc(u.privacy)}</a><a href="/terms/">${esc(u.terms)}</a><a href="mailto:hello@vid2tune.com">${esc(u.contact)}</a></nav>
   </div>
 </footer>
+<nav class="tabbar" aria-label="Tools">${tabs}</nav>
 ${script}
 </body>
 </html>
@@ -170,8 +200,11 @@ function linkWidget(lang) {
   return `<section class="tool" data-link-tool data-api="${esc(API_URL)}" aria-label="${esc(u.linkLabel)}">
   <form class="link-form" novalidate>
     <label class="visually-hidden" for="link-url">${esc(u.linkLabel)}</label>
-    <input id="link-url" type="url" inputmode="url" autocomplete="off" placeholder="${esc(u.linkPlaceholder)}" required>
-    <button type="submit" class="btn-primary">${esc(u.getVideo)}</button>
+    <div class="link-field">
+      <input id="link-url" type="url" inputmode="url" autocomplete="off" enterkeyhint="go" placeholder="${esc(u.linkPlaceholder)}" required>
+      <button type="button" class="link-paste" hidden>${icon('paste')}<span>${esc(u.paste)}</span></button>
+    </div>
+    <button type="submit" class="btn-primary">${icon('download')}<span>${esc(u.getVideo)}</span></button>
   </form>
   <p class="link-sites">${esc(u.linkSites)}</p>
   <p class="link-offline" hidden>${esc(u.offlineNotice)} <a href="${pathFor(lang, 'mp4mp3')}">${esc(u.offlineCta)}</a></p>
@@ -218,7 +251,7 @@ function toolWidget(lang, { mode, format, ringtone }) {
   return `<section class="tool" data-tool data-mode="${mode}" data-format="${format}" data-ringtone="${ringtone ? 1 : 0}" aria-label="Converter">
   <label class="dropzone" for="file-input">
     <input id="file-input" class="visually-hidden" type="file" accept="${ACCEPT}"${multiple}>
-    ${ICON_UPLOAD}
+    <span class="dz-bubble">${ICON_UPLOAD}</span>
     <span class="dz-title">${esc(dzTitle)}</span>
     <span class="dz-sub">${esc(u.dzSub)}</span>
   </label>${trim}
@@ -242,13 +275,14 @@ function toolPage(lang, key) {
   const p = L.pages[key];
   const u = L.ui;
   const path = pathFor(lang, key);
-  const steps = p.steps.map(([t, d]) => `<li><strong>${esc(t)}</strong>${esc(d)}</li>`).join('');
+  const steps = p.steps.map(([t, d]) => `<li><strong>${esc(t)}</strong><span>${esc(d)}</span></li>`).join('');
   const faq = p.faq.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('');
   const related = Object.keys(L.tools).filter((k) => k !== key && has(lang, k))
-    .map((k) => `<a href="${pathFor(lang, k)}">${esc(L.tools[k][0])}<span>${esc(L.tools[k][1])}</span></a>`).join('');
+    .map((k) => `<a href="${pathFor(lang, k)}"><span class="tile-ico">${icon(k)}</span><strong>${esc(L.tools[k][0])}</strong><span>${esc(L.tools[k][1])}</span></a>`).join('');
   const badges = (p.badges || u.badges).map((b) => `<span class="badge">${esc(b)}</span>`).join('');
   const main = `<div class="wrap">
   <section class="hero">
+    <span class="hero-ico">${icon(key)}</span>
     <h1>${esc(p.h1)}</h1>
     <p>${esc(p.lead)}</p>
     <div class="badges">${badges}</div>

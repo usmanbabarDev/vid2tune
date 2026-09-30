@@ -63,6 +63,22 @@
     }
   });
 
+  // One-tap paste from the clipboard (where the browser allows it).
+  const pasteBtn = tool.querySelector('.link-paste');
+  if (navigator.clipboard && navigator.clipboard.readText) {
+    pasteBtn.hidden = false;
+    pasteBtn.addEventListener('click', async () => {
+      try {
+        const text = (await navigator.clipboard.readText()).trim();
+        if (!text) return;
+        input.value = text;
+        form.requestSubmit();
+      } catch (_) {
+        input.focus();
+      }
+    });
+  }
+
   // Paste a link and go.
   input.addEventListener('paste', () => setTimeout(() => {
     if (/^https?:\/\//i.test(input.value.trim())) form.requestSubmit();
