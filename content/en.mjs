@@ -2,7 +2,7 @@
 export const meta = { name: 'English', dir: 'ltr' };
 
 export const ui = {
-  nav: { home: 'MP4 to MP3', batch: 'Batch', trim: 'Trimmer', ringtone: 'Ringtone', download: "Downloader" },
+  nav: { mp4mp3: 'MP4 to MP3', batch: 'Batch', trim: 'Trimmer', ringtone: 'Ringtone', download: "Downloader" },
   badges: ['Free', 'No upload', 'No sign-up', 'No watermark'],
   dzSingle: 'Choose a video or drop it here',
   dzBatch: 'Choose videos or drop them here',
@@ -77,7 +77,7 @@ export const runtime = {
 
 export const tools = {
   download: ["Video downloader","Paste a link, get MP4 or MP3"],
-  home: ['MP4 to MP3', 'Convert a video to MP3'],
+  mp4mp3: ['MP4 to MP3', 'Convert a video to MP3'],
   batch: ['Batch MP4 to MP3', 'Convert many videos at once'],
   extract: ['Extract audio', 'Pull the sound out of any video'],
   wav: ['Video to WAV', 'Lossless audio for editing'],
@@ -134,7 +134,7 @@ export const pages = {
       ]
     ]
   },
-  home: {
+  mp4mp3: {
     title: 'MP4 to MP3 Converter — Free, Private, No Upload | vid2tune',
     description: 'Convert MP4 to MP3 online for free. Runs in your browser — no upload, no sign-up, no watermark. Choose 128–320 kbps quality.',
     h1: 'MP4 to MP3 Converter',

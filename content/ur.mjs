@@ -2,7 +2,7 @@
 export const meta = { name: 'اردو', dir: 'rtl' };
 
 export const ui = {
-  nav: { home: 'MP4 سے MP3', batch: 'بیچ', trim: 'ٹرمر', ringtone: 'رنگ ٹون', download: "ڈاؤن لوڈر" },
+  nav: { mp4mp3: 'MP4 سے MP3', batch: 'بیچ', trim: 'ٹرمر', ringtone: 'رنگ ٹون', download: "ڈاؤن لوڈر" },
   badges: ['مفت', 'اپ لوڈ نہیں', 'سائن اپ نہیں', 'واٹر مارک نہیں'],
   dzSingle: 'ویڈیو منتخب کریں یا یہاں چھوڑیں',
   dzBatch: 'ویڈیوز منتخب کریں یا یہاں چھوڑیں',
@@ -76,7 +76,7 @@ export const runtime = {
 
 export const tools = {
   download: ["ویڈیو ڈاؤن لوڈر","لنک پیسٹ کریں، MP4 یا MP3 لیں"],
-  home: ['MP4 سے MP3', 'ویڈیو کو MP3 میں بدلیں'],
+  mp4mp3: ['MP4 سے MP3', 'ویڈیو کو MP3 میں بدلیں'],
   batch: ['بیچ MP4 سے MP3', 'ایک ساتھ کئی ویڈیوز'],
   trim: ['آڈیو ٹرمر', 'آڈیو یا ویڈیو سے کلپ کاٹیں'],
   ringtone: ['رنگ ٹون میکر', 'فیڈ کے ساتھ 30 سیکنڈ کی رنگ ٹون'],
@@ -129,7 +129,7 @@ export const pages = {
       ]
     ]
   },
-  home: {
+  mp4mp3: {
     title: 'MP4 سے MP3 کنورٹر — مفت، محفوظ، بغیر اپ لوڈ | vid2tune',
     description: 'MP4 ویڈیو کو مفت MP3 میں تبدیل کریں۔ سب کچھ آپ کے براؤزر میں — نہ اپ لوڈ، نہ سائن اپ، نہ واٹر مارک۔',
     h1: 'MP4 سے MP3 کنورٹر',

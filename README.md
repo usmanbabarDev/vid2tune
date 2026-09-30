@@ -7,7 +7,7 @@ Free, private video → audio tools in English, Urdu, Hindi and Arabic. Everythi
 ```
 build.mjs            templates + page setup → generates public/ (all languages), sitemap.xml, robots.txt
 content/en.mjs       English copy for all 8 tools (source of truth)
-content/ur|hi|ar.mjs translated UI + the 4 main tools (MP4→MP3, batch, trimmer, ringtone)
+content/ur|hi|ar.mjs translated UI + the 5 main tools (downloader, MP4→MP3, batch, trimmer, ringtone)
 serve.mjs            local preview server (http://localhost:4173)
 public/              the deployable site (generated HTML + static assets)
   assets/app.js      converter UI (single, batch + ZIP, trim/ringtone modes)
@@ -20,7 +20,7 @@ public/              the deployable site (generated HTML + static assets)
 
 ## Link downloader (server/)
 
-`/video-downloader/` lets visitors paste a TikTok, Instagram, Facebook, X, Pinterest, Reddit, Dailymotion, Threads or SoundCloud link and get an MP4 or MP3. **YouTube is deliberately blocked**, and so is yt-dlp's generic extractor, so the server can't be pointed at arbitrary URLs.
+The homepage (`/`, and `/ur/`, `/hi/`, `/ar/`) is the link downloader: visitors paste a TikTok, Instagram, Facebook, X, Pinterest, Reddit, Dailymotion, Threads or SoundCloud link and get an MP4 or MP3. **YouTube is deliberately blocked**, and so is yt-dlp's generic extractor, so the server can't be pointed at arbitrary URLs.
 
 Unlike the converter tools, this needs a backend: `server/server.mjs` (no npm deps) wraps **yt-dlp** + **ffmpeg**.
 

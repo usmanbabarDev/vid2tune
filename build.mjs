@@ -23,7 +23,7 @@ const ACCEPT = 'video/*,audio/*,.mp4,.m4v,.mov,.webm,.m4a,.mp3,.wav,.ogg,.oga,.o
 
 // Page key → URL slug and converter setup (shared by every language).
 const TOOLS = {
-  home: { slug: '', mode: 'single', format: 'mp3' },
+  mp4mp3: { slug: 'mp4-to-mp3/', mode: 'single', format: 'mp3' },
   batch: { slug: 'batch-mp4-to-mp3/', mode: 'batch', format: 'mp3' },
   extract: { slug: 'extract-audio-from-video/', mode: 'single', format: 'mp3' },
   wav: { slug: 'video-to-wav/', mode: 'single', format: 'wav' },
@@ -31,9 +31,9 @@ const TOOLS = {
   webm: { slug: 'webm-to-mp3/', mode: 'single', format: 'mp3' },
   trim: { slug: 'audio-trimmer/', mode: 'trim', format: 'mp3' },
   ringtone: { slug: 'ringtone-maker/', mode: 'trim', format: 'mp3', ringtone: true },
-  download: { slug: 'video-downloader/', mode: 'link' },
+  download: { slug: '', mode: 'link' }, // the homepage
 };
-const NAV_KEYS = ['home', 'download', 'batch', 'trim', 'ringtone'];
+const NAV_KEYS = ['download', 'mp4mp3', 'batch', 'trim', 'ringtone'];
 
 const INFO_PAGES = [
   {
@@ -42,7 +42,7 @@ const INFO_PAGES = [
     description: 'vid2tune is a free, private toolkit for turning video into audio — built to run entirely in your browser.',
     html: `<h1>About vid2tune</h1>
 <p>Most online converters upload your files to a server and cover the page in pop-ups and fake download buttons. vid2tune was built to be the opposite: clean, fast and private.</p>
-<p>The converter, trimmer and ringtone tools run inside your browser using the Web Audio API, the LAME MP3 encoder and your browser’s built-in AAC encoder — your files are never uploaded. The <a href="/video-downloader/">video downloader</a> fetches public posts from supported sites on our server and passes them straight to you without keeping a copy.</p>
+<p>The converter, trimmer and ringtone tools run inside your browser using the Web Audio API, the LAME MP3 encoder and your browser’s built-in AAC encoder — your files are never uploaded. The <a href="/">video downloader</a> fetches public posts from supported sites on our server and passes them straight to you without keeping a copy.</p>
 <p>vid2tune is available in English, <a href="/ur/">اردو</a>, <a href="/hi/">हिन्दी</a> and <a href="/ar/">العربية</a>.</p>
 <p>Questions or ideas? Email <a href="mailto:hello@vid2tune.com">hello@vid2tune.com</a>.</p>`,
   },
@@ -309,7 +309,7 @@ writeFileSync(join(OUT, '404.html'), withBase(layout({
   path: '/404/',
   title: 'Page not found | vid2tune',
   description: 'This page does not exist.',
-  main: `<div class="wrap"><section class="hero"><h1>Page not found</h1><p>That page doesn’t exist. <a href="/">Go to the MP4 to MP3 converter</a>.</p></section></div>`,
+  main: `<div class="wrap"><section class="hero"><h1>Page not found</h1><p>That page doesn’t exist. <a href="/">Go to the video downloader</a>.</p></section></div>`,
 })));
 
 const urls = sitemap.map((p) => `  <url><loc>${SITE_URL}${p}</loc></url>`).join('\n');
