@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#5b3df5">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/style.css?v=0e9dcacf">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Video Downloader — vid2tune","url":"https://vid2tune.com/","inLanguage":"en","applicationCategory":"MultimediaApplication","operatingSystem":"Any (web browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which sites are supported?","acceptedAnswer":{"@type":"Answer","text":"TikTok, Instagram, Facebook, X (Twitter), Pinterest, Reddit, Dailymotion, Threads and SoundCloud. YouTube is not supported."}},{"@type":"Question","name":"Why did my link fail?","acceptedAnswer":{"@type":"Answer","text":"Private posts, stories and anything that needs a login can’t be downloaded. Check that the post is public and the link is complete."}},{"@type":"Question","name":"Do you keep a copy of the video?","acceptedAnswer":{"@type":"Answer","text":"No. The video is fetched, sent to you and deleted from our server straight away."}},{"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes — no sign-up and no watermark added."}}]}</script>
 <!-- Ads: once AdSense approves the site, paste its <script> tag here and fill /ads.txt. -->
@@ -37,15 +37,16 @@
   <section class="hero">
     <h1>Video Downloader</h1>
     <p>Paste a link from TikTok, Instagram, Facebook, X and more — get the video as MP4 or the sound as MP3.</p>
-    <div class="badges"><span class="badge">Free</span><span class="badge">No upload</span><span class="badge">No sign-up</span><span class="badge">No watermark</span></div>
+    <div class="badges"><span class="badge">Free</span><span class="badge">No sign-up</span><span class="badge">No watermark added</span><span class="badge">MP4 + MP3</span></div>
   </section>
   <section class="tool" data-link-tool data-api="http://localhost:8787" aria-label="Video link">
   <form class="link-form" novalidate>
     <label class="visually-hidden" for="link-url">Video link</label>
-    <input id="link-url" type="url" inputmode="url" autocomplete="off" dir="ltr" placeholder="Paste a TikTok, Instagram, Facebook or X link" required>
+    <input id="link-url" type="url" inputmode="url" autocomplete="off" placeholder="Paste a TikTok, Instagram, Facebook or X link" required>
     <button type="submit" class="btn-primary">Get video</button>
   </form>
   <p class="link-sites">Works with TikTok · Instagram · Facebook · X · Pinterest · Reddit — not YouTube</p>
+  <p class="link-offline" hidden>The link downloader is being set up and isn’t available yet. <a href="/mp4-to-mp3/">Convert a video file to MP3 instead →</a></p>
   <p class="link-status" aria-live="polite"></p>
   <div class="link-result" hidden>
     <img class="link-thumb" alt="" referrerpolicy="no-referrer">
@@ -85,6 +86,6 @@
   </div>
 </footer>
 <script>window.V2T_I18N = {"convertTo":"Convert to {fmt}","exportAs":"Export {fmt}","ready":"Ready to convert","tooBig":"This file is over 2 GB — too large to convert in a browser.","reading":"Reading audio…","encoding":"Encoding… {pct}%","download":"Download {fmt}","done":"Done · {size} · {dur}","loadingWave":"Loading waveform…","trimHint":"{dur} long · drag the sliders to pick the part to keep","selected":"{len} selected","play":"Play selection","stop":"Stop","downloadAll":"Download all (ZIP)","zipping":"Preparing ZIP…","fetching":"Fetching video…","preparing":"Preparing your {fmt}… this can take up to a minute.","downloadingPct":"Downloading… {pct}%","saved":"Saved: {name}","offline":"The download service is offline right now. Please try again later.","err_bad_url":"That doesn’t look like a link. Copy the full address and try again.","err_youtube":"YouTube links aren’t supported.","err_unsupported":"This site isn’t supported yet. Try TikTok, Instagram, Facebook, X, Pinterest or Reddit.","err_private":"This post is private or needs a login, so it can’t be downloaded.","err_too_big":"This video is too large to download here.","err_no_video":"No downloadable video was found at that link.","err_gone":"That post seems to have been removed.","err_busy":"The server is busy — please try again in a minute.","err_rate":"Too many requests — please wait a few minutes.","err_timeout":"The site took too long to respond. Please try again.","err_no_ytdlp":"The download service is offline right now. Please try again later.","err_blocked":"This site blocks downloads of this post from our server’s region. Try another post.","err_failed":"Couldn’t fetch that video. Please try again later.","errDecode":"Couldn’t read audio from this file. It may have no sound track, or use a codec this browser can’t open — try Chrome or Edge.","errMemory":"This file is too long for your device’s memory. Try a shorter clip.","errGeneric":"Conversion failed: {msg}"};</script>
-<script src="/assets/link.js" defer></script>
+<script src="/assets/link.js?v=0e9dcacf" defer></script>
 </body>
 </html>

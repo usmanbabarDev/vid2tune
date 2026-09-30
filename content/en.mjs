@@ -32,6 +32,8 @@ export const ui = {
   dlVideo: "Download MP4",
   dlAudio: "Download MP3",
   linkNote: "🔒 We fetch the public video and hand it straight to you — nothing is stored.",
+  offlineNotice: "The link downloader is being set up and isn’t available yet.",
+  offlineCta: "Convert a video file to MP3 instead →",
   home: 'vid2tune home',
 };
 
@@ -96,6 +98,7 @@ const COMMON_FAQ = [
 
 export const pages = {
   download: {
+    "badges": ["Free","No sign-up","No watermark added","MP4 + MP3"],
     "title": "Video Downloader — Save TikTok, Instagram & Facebook Videos as MP4 or MP3 | vid2tune",
     "description": "Paste a TikTok, Instagram, Facebook, X or Pinterest link and download the video as MP4 or just the audio as MP3. Free, no sign-up, no watermark added.",
     "h1": "Video Downloader",

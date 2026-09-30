@@ -30,6 +30,8 @@ jobs:
         run: node build.mjs
         env:
           BASE_PATH: /${{ github.event.repository.name }}
+          # No hosted download API yet, so the downloader shows its "not available yet" notice.
+          API_URL: ""
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

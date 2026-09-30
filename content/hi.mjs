@@ -32,6 +32,8 @@ export const ui = {
   dlVideo: "MP4 डाउनलोड करें",
   dlAudio: "MP3 डाउनलोड करें",
   linkNote: "🔒 हम सार्वजनिक वीडियो लाकर सीधे आपको देते हैं — कुछ भी सेव नहीं किया जाता।",
+  offlineNotice: "लिंक डाउनलोडर अभी तैयार किया जा रहा है और फ़िलहाल उपलब्ध नहीं है।",
+  offlineCta: "इसके बजाय वीडियो फ़ाइल को MP3 में बदलें →",
   home: 'vid2tune होम',
 };
 
@@ -91,6 +93,7 @@ const COMMON_FAQ = [
 
 export const pages = {
   download: {
+    "badges": ["मुफ़्त","साइन-अप नहीं","कोई वॉटरमार्क नहीं","MP4 + MP3"],
     "title": "वीडियो डाउनलोडर — TikTok, Instagram और Facebook वीडियो MP4 या MP3 में | vid2tune",
     "description": "TikTok, Instagram, Facebook, X या Pinterest का लिंक पेस्ट करें और वीडियो MP4 में या सिर्फ़ आवाज़ MP3 में डाउनलोड करें। मुफ़्त, बिना साइन-अप।",
     "h1": "वीडियो डाउनलोडर",

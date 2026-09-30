@@ -28,6 +28,21 @@
   let current = null; // { url, info }
   let busy = false;
 
+  // Tell visitors straight away if the download service can't be reached.
+  const offline = tool.querySelector('.link-offline');
+  (async () => {
+    try {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 6000);
+      const res = await fetch(`${API}/api/health`, { signal: ctrl.signal });
+      clearTimeout(timer);
+      if (!res.ok) throw new Error('down');
+    } catch (_) {
+      offline.hidden = false;
+      tool.classList.add('is-offline');
+    }
+  })();
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (busy) return;

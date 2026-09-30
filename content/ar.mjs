@@ -32,6 +32,8 @@ export const ui = {
   dlVideo: "تنزيل MP4",
   dlAudio: "تنزيل MP3",
   linkNote: "🔒 نجلب الفيديو العام ونسلّمه لك مباشرة — لا يُحفظ أي شيء.",
+  offlineNotice: "أداة التنزيل من الرابط قيد الإعداد وغير متاحة حاليًا.",
+  offlineCta: "حوّل ملف فيديو إلى MP3 بدلًا من ذلك ←",
   home: 'الصفحة الرئيسية لـ vid2tune',
 };
 
@@ -91,6 +93,7 @@ const COMMON_FAQ = [
 
 export const pages = {
   download: {
+    "badges": ["مجاني","بدون تسجيل","بدون علامة مائية مضافة","MP4 + MP3"],
     "title": "تنزيل فيديوهات TikTok وInstagram وFacebook بصيغة MP4 أو MP3 | vid2tune",
     "description": "الصق رابط TikTok أو Instagram أو Facebook أو X أو Pinterest ونزّل الفيديو بصيغة MP4 أو الصوت فقط بصيغة MP3. مجاني وبدون تسجيل.",
     "h1": "تنزيل الفيديو من رابط",

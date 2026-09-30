@@ -1,5 +1,6 @@
 // Generates the static site in public/ from content/*.mjs. Run: node build.mjs
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -14,6 +15,11 @@ const YEAR = 2026;
 const OUT = join(dirname(fileURLToPath(import.meta.url)), 'public');
 // Set BASE_PATH (e.g. "/vid2tune") when the site is served from a sub-folder, like GitHub Pages.
 const BASE = (process.env.BASE_PATH || '').replace(/\/$/, '');
+// One version string for all assets, so a deploy never mixes new pages with cached old CSS/JS.
+const ASSET_V = createHash('sha1')
+  .update(readdirSync(join(OUT, 'assets')).sort().map((f) => readFileSync(join(OUT, 'assets', f))).join(''))
+  .digest('hex').slice(0, 8);
+
 // Where the link-downloader API (server/server.mjs) runs. Empty = same origin as the site.
 const API_URL = (process.env.API_URL ?? 'http://localhost:8787').replace(/\/$/, '');
 
@@ -164,10 +170,11 @@ function linkWidget(lang) {
   return `<section class="tool" data-link-tool data-api="${esc(API_URL)}" aria-label="${esc(u.linkLabel)}">
   <form class="link-form" novalidate>
     <label class="visually-hidden" for="link-url">${esc(u.linkLabel)}</label>
-    <input id="link-url" type="url" inputmode="url" autocomplete="off" dir="ltr" placeholder="${esc(u.linkPlaceholder)}" required>
+    <input id="link-url" type="url" inputmode="url" autocomplete="off" placeholder="${esc(u.linkPlaceholder)}" required>
     <button type="submit" class="btn-primary">${esc(u.getVideo)}</button>
   </form>
   <p class="link-sites">${esc(u.linkSites)}</p>
+  <p class="link-offline" hidden>${esc(u.offlineNotice)} <a href="${pathFor(lang, 'mp4mp3')}">${esc(u.offlineCta)}</a></p>
   <p class="link-status" aria-live="polite"></p>
   <div class="link-result" hidden>
     <img class="link-thumb" alt="" referrerpolicy="no-referrer">
@@ -239,7 +246,7 @@ function toolPage(lang, key) {
   const faq = p.faq.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('');
   const related = Object.keys(L.tools).filter((k) => k !== key && has(lang, k))
     .map((k) => `<a href="${pathFor(lang, k)}">${esc(L.tools[k][0])}<span>${esc(L.tools[k][1])}</span></a>`).join('');
-  const badges = u.badges.map((b) => `<span class="badge">${esc(b)}</span>`).join('');
+  const badges = (p.badges || u.badges).map((b) => `<span class="badge">${esc(b)}</span>`).join('');
   const main = `<div class="wrap">
   <section class="hero">
     <h1>${esc(p.h1)}</h1>
@@ -283,7 +290,10 @@ function toolPage(lang, key) {
 /* ---------- write ---------- */
 
 // Root-relative links get the base path; absolute URLs (canonical, hreflang) keep pointing at SITE_URL.
-const withBase = (html) => (BASE ? html.replace(/(href|src)="\/(?!\/)/g, `$1="${BASE}/`) : html);
+const withBase = (html) => {
+  const out = html.replace(/(href|src)="(\/assets\/[\w.-]+\.(?:css|js))"/g, `$1="$2?v=${ASSET_V}"`);
+  return BASE ? out.replace(/(href|src)="\/(?!\/)/g, `$1="${BASE}/`) : out;
+};
 
 function write(path, html) {
   const file = join(OUT, path, 'index.html');

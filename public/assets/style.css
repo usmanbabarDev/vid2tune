@@ -218,3 +218,6 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
   .link-thumb { width: 100%; aspect-ratio: 16 / 9; }
   .link-row select, .link-row .btn-download { flex: 1; }
 }
+.link-offline { margin: 12px 0 0; padding: 10px 14px; border-radius: 10px; background: var(--accent-soft); color: var(--text); font-size: 14px; text-align: center; }
+.link-offline a { font-weight: 600; white-space: nowrap; }
+.link-form input:not(:placeholder-shown) { direction: ltr; }

@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#5b3df5">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/style.css?v=0e9dcacf">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"वीडियो डाउनलोडर — vid2tune","url":"https://vid2tune.com/hi/","inLanguage":"hi","applicationCategory":"MultimediaApplication","operatingSystem":"Any (web browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"कौन-सी साइटें सपोर्ट हैं?","acceptedAnswer":{"@type":"Answer","text":"TikTok, Instagram, Facebook, X (Twitter), Pinterest, Reddit, Dailymotion, Threads और SoundCloud। YouTube सपोर्ट नहीं है।"}},{"@type":"Question","name":"मेरा लिंक क्यों नहीं चला?","acceptedAnswer":{"@type":"Answer","text":"प्राइवेट पोस्ट, स्टोरीज़ और लॉगिन वाली चीज़ें डाउनलोड नहीं हो सकतीं। देखें कि पोस्ट सार्वजनिक हो और लिंक पूरा हो।"}},{"@type":"Question","name":"क्या आप वीडियो की कॉपी रखते हैं?","acceptedAnswer":{"@type":"Answer","text":"नहीं। वीडियो लाकर आपको भेजा जाता है और तुरंत हमारे सर्वर से हटा दिया जाता है।"}},{"@type":"Question","name":"क्या यह मुफ़्त है?","acceptedAnswer":{"@type":"Answer","text":"हाँ — न साइन-अप, न कोई वॉटरमार्क जोड़ा जाता है।"}}]}</script>
 <!-- Ads: once AdSense approves the site, paste its <script> tag here and fill /ads.txt. -->
@@ -37,15 +37,16 @@
   <section class="hero">
     <h1>वीडियो डाउनलोडर</h1>
     <p>TikTok, Instagram, Facebook, X और भी से लिंक पेस्ट करें — वीडियो MP4 में या आवाज़ MP3 में पाएँ।</p>
-    <div class="badges"><span class="badge">मुफ़्त</span><span class="badge">अपलोड नहीं</span><span class="badge">साइन-अप नहीं</span><span class="badge">वॉटरमार्क नहीं</span></div>
+    <div class="badges"><span class="badge">मुफ़्त</span><span class="badge">साइन-अप नहीं</span><span class="badge">कोई वॉटरमार्क नहीं</span><span class="badge">MP4 + MP3</span></div>
   </section>
   <section class="tool" data-link-tool data-api="http://localhost:8787" aria-label="वीडियो लिंक">
   <form class="link-form" novalidate>
     <label class="visually-hidden" for="link-url">वीडियो लिंक</label>
-    <input id="link-url" type="url" inputmode="url" autocomplete="off" dir="ltr" placeholder="TikTok, Instagram, Facebook या X का लिंक यहाँ पेस्ट करें" required>
+    <input id="link-url" type="url" inputmode="url" autocomplete="off" placeholder="TikTok, Instagram, Facebook या X का लिंक यहाँ पेस्ट करें" required>
     <button type="submit" class="btn-primary">वीडियो पाएँ</button>
   </form>
   <p class="link-sites">TikTok · Instagram · Facebook · X · Pinterest · Reddit के साथ काम करता है — YouTube नहीं</p>
+  <p class="link-offline" hidden>लिंक डाउनलोडर अभी तैयार किया जा रहा है और फ़िलहाल उपलब्ध नहीं है। <a href="/hi/mp4-to-mp3/">इसके बजाय वीडियो फ़ाइल को MP3 में बदलें →</a></p>
   <p class="link-status" aria-live="polite"></p>
   <div class="link-result" hidden>
     <img class="link-thumb" alt="" referrerpolicy="no-referrer">
@@ -85,6 +86,6 @@
   </div>
 </footer>
 <script>window.V2T_I18N = {"convertTo":"{fmt} में कन्वर्ट करें","exportAs":"{fmt} एक्सपोर्ट करें","ready":"कन्वर्ट के लिए तैयार","tooBig":"यह फ़ाइल 2 GB से बड़ी है — ब्राउज़र में कन्वर्ट करने के लिए बहुत बड़ी।","reading":"ऑडियो पढ़ा जा रहा है…","encoding":"एन्कोडिंग… {pct}%","download":"{fmt} डाउनलोड करें","done":"पूरा · {size} · {dur}","loadingWave":"वेवफ़ॉर्म लोड हो रहा है…","trimHint":"{dur} लंबा · रखने वाला हिस्सा स्लाइडर से चुनें","selected":"{len} चुना गया","play":"चुना हिस्सा चलाएँ","stop":"रोकें","downloadAll":"सभी डाउनलोड करें (ZIP)","zipping":"ZIP तैयार हो रहा है…","fetching":"वीडियो लाया जा रहा है…","preparing":"आपकी {fmt} तैयार हो रही है… इसमें एक मिनट तक लग सकता है।","downloadingPct":"डाउनलोड हो रहा है… {pct}%","saved":"सेव हो गया: {name}","offline":"डाउनलोड सर्विस अभी उपलब्ध नहीं है। कृपया बाद में कोशिश करें।","err_bad_url":"यह लिंक सही नहीं लगता। पूरा लिंक कॉपी करके फिर कोशिश करें।","err_youtube":"YouTube लिंक सपोर्ट नहीं हैं।","err_unsupported":"यह साइट अभी सपोर्ट नहीं है। TikTok, Instagram, Facebook, X, Pinterest या Reddit आज़माएँ।","err_private":"यह पोस्ट प्राइवेट है या लॉगिन माँगती है, इसलिए डाउनलोड नहीं हो सकती।","err_too_big":"यह वीडियो यहाँ डाउनलोड करने के लिए बहुत बड़ा है।","err_no_video":"इस लिंक पर डाउनलोड करने लायक कोई वीडियो नहीं मिला।","err_gone":"लगता है यह पोस्ट हटा दी गई है।","err_busy":"सर्वर व्यस्त है — एक मिनट बाद फिर कोशिश करें।","err_rate":"बहुत ज़्यादा अनुरोध — कुछ मिनट रुकें।","err_timeout":"साइट ने जवाब देने में बहुत देर लगाई। फिर कोशिश करें।","err_no_ytdlp":"डाउनलोड सर्विस अभी उपलब्ध नहीं है। कृपया बाद में कोशिश करें।","err_blocked":"यह साइट हमारे सर्वर के क्षेत्र से इस पोस्ट का डाउनलोड रोकती है। कोई और पोस्ट आज़माएँ।","err_failed":"यह वीडियो नहीं लाया जा सका। बाद में कोशिश करें।","errDecode":"इस फ़ाइल से ऑडियो नहीं पढ़ा जा सका। शायद इसमें आवाज़ नहीं है या यह ब्राउज़र इसका कोडेक नहीं खोल सकता — Chrome या Edge आज़माएँ।","errMemory":"यह फ़ाइल आपके डिवाइस की मेमोरी के लिए बहुत लंबी है। छोटी क्लिप आज़माएँ।","errGeneric":"कन्वर्ज़न विफल: {msg}"};</script>
-<script src="/assets/link.js" defer></script>
+<script src="/assets/link.js?v=0e9dcacf" defer></script>
 </body>
 </html>

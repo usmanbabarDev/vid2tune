@@ -10,7 +10,8 @@
   const MAX_BYTES = 2 * 1024 ** 3;
   const SAMPLE_RATE = 44100;
   // Resolve the worker next to this script so the site also works from a sub-folder.
-  const WORKER_URL = new URL('encoder-worker.js', document.querySelector('script[src$="app.js"]').src);
+  const APP_SRC = new URL(document.querySelector('script[src*="app.js"]').src);
+  const WORKER_URL = new URL(`encoder-worker.js${APP_SRC.search}`, APP_SRC);
   const LOSSY = ['mp3', 'm4a', 'm4r'];
 
   // UI strings are injected per language by build.mjs.

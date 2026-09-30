@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#5b3df5">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/style.css?v=0e9dcacf">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"تنزيل الفيديو من رابط — vid2tune","url":"https://vid2tune.com/ar/","inLanguage":"ar","applicationCategory":"MultimediaApplication","operatingSystem":"Any (web browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ما المواقع المدعومة؟","acceptedAnswer":{"@type":"Answer","text":"TikTok وInstagram وFacebook وX (تويتر) وPinterest وReddit وDailymotion وThreads وSoundCloud. لا يدعم YouTube."}},{"@type":"Question","name":"لماذا فشل الرابط؟","acceptedAnswer":{"@type":"Answer","text":"لا يمكن تنزيل المنشورات الخاصة والقصص وأي محتوى يتطلب تسجيل الدخول. تأكد أن المنشور عام وأن الرابط كامل."}},{"@type":"Question","name":"هل تحتفظون بنسخة من الفيديو؟","acceptedAnswer":{"@type":"Answer","text":"لا. يُجلب الفيديو ويُرسل إليك ثم يُحذف من خادمنا فورًا."}},{"@type":"Question","name":"هل الخدمة مجانية؟","acceptedAnswer":{"@type":"Answer","text":"نعم — بدون تسجيل وبدون إضافة علامة مائية."}}]}</script>
 <!-- Ads: once AdSense approves the site, paste its <script> tag here and fill /ads.txt. -->
@@ -37,15 +37,16 @@
   <section class="hero">
     <h1>تنزيل الفيديو من رابط</h1>
     <p>الصق رابطًا من TikTok أو Instagram أو Facebook أو X وغيرها — واحصل على الفيديو بصيغة MP4 أو الصوت بصيغة MP3.</p>
-    <div class="badges"><span class="badge">مجاني</span><span class="badge">بدون رفع</span><span class="badge">بدون تسجيل</span><span class="badge">بدون علامة مائية</span></div>
+    <div class="badges"><span class="badge">مجاني</span><span class="badge">بدون تسجيل</span><span class="badge">بدون علامة مائية مضافة</span><span class="badge">MP4 + MP3</span></div>
   </section>
   <section class="tool" data-link-tool data-api="http://localhost:8787" aria-label="رابط الفيديو">
   <form class="link-form" novalidate>
     <label class="visually-hidden" for="link-url">رابط الفيديو</label>
-    <input id="link-url" type="url" inputmode="url" autocomplete="off" dir="ltr" placeholder="الصق رابط TikTok أو Instagram أو Facebook أو X هنا" required>
+    <input id="link-url" type="url" inputmode="url" autocomplete="off" placeholder="الصق رابط TikTok أو Instagram أو Facebook أو X هنا" required>
     <button type="submit" class="btn-primary">جلب الفيديو</button>
   </form>
   <p class="link-sites">يعمل مع TikTok · Instagram · Facebook · X · Pinterest · Reddit — وليس YouTube</p>
+  <p class="link-offline" hidden>أداة التنزيل من الرابط قيد الإعداد وغير متاحة حاليًا. <a href="/ar/mp4-to-mp3/">حوّل ملف فيديو إلى MP3 بدلًا من ذلك ←</a></p>
   <p class="link-status" aria-live="polite"></p>
   <div class="link-result" hidden>
     <img class="link-thumb" alt="" referrerpolicy="no-referrer">
@@ -85,6 +86,6 @@
   </div>
 </footer>
 <script>window.V2T_I18N = {"convertTo":"تحويل إلى {fmt}","exportAs":"تصدير {fmt}","ready":"جاهز للتحويل","tooBig":"حجم الملف أكبر من 2 GB — كبير جدًا للتحويل في المتصفح.","reading":"جارٍ قراءة الصوت…","encoding":"جارٍ الترميز… {pct}%","download":"تنزيل {fmt}","done":"تم · {size} · {dur}","loadingWave":"جارٍ تحميل الموجة الصوتية…","trimHint":"المدة {dur} · اسحب المؤشرين لاختيار الجزء المطلوب","selected":"المحدد: {len}","play":"تشغيل الجزء المحدد","stop":"إيقاف","downloadAll":"تنزيل الكل (ZIP)","zipping":"جارٍ تجهيز ملف ZIP…","fetching":"جارٍ جلب الفيديو…","preparing":"جارٍ تجهيز ملف {fmt}… قد يستغرق ذلك دقيقة.","downloadingPct":"جارٍ التنزيل… {pct}%","saved":"تم الحفظ: {name}","offline":"خدمة التنزيل غير متاحة حاليًا. يُرجى المحاولة لاحقًا.","err_bad_url":"لا يبدو هذا رابطًا صحيحًا. انسخ الرابط كاملًا وحاول مجددًا.","err_youtube":"روابط YouTube غير مدعومة.","err_unsupported":"هذا الموقع غير مدعوم بعد. جرّب TikTok أو Instagram أو Facebook أو X أو Pinterest أو Reddit.","err_private":"هذا المنشور خاص أو يتطلب تسجيل الدخول، لذا لا يمكن تنزيله.","err_too_big":"هذا الفيديو كبير جدًا للتنزيل هنا.","err_no_video":"لم يُعثر على فيديو قابل للتنزيل في هذا الرابط.","err_gone":"يبدو أن هذا المنشور قد حُذف.","err_busy":"الخادم مشغول — حاول مجددًا بعد دقيقة.","err_rate":"طلبات كثيرة جدًا — انتظر بضع دقائق.","err_timeout":"استغرق الموقع وقتًا طويلًا للرد. حاول مجددًا.","err_no_ytdlp":"خدمة التنزيل غير متاحة حاليًا. يُرجى المحاولة لاحقًا.","err_blocked":"يحظر هذا الموقع تنزيل هذا المنشور من منطقة خادمنا. جرّب منشورًا آخر.","err_failed":"تعذّر جلب هذا الفيديو. حاول لاحقًا.","errDecode":"تعذّرت قراءة الصوت من هذا الملف. قد لا يحتوي على صوت أو يستخدم ترميزًا لا يدعمه المتصفح — جرّب Chrome أو Edge.","errMemory":"الملف طويل جدًا بالنسبة لذاكرة جهازك. جرّب مقطعًا أقصر.","errGeneric":"فشل التحويل: {msg}"};</script>
-<script src="/assets/link.js" defer></script>
+<script src="/assets/link.js?v=0e9dcacf" defer></script>
 </body>
 </html>
