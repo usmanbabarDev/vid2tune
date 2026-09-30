@@ -18,6 +18,25 @@ public/              the deployable site (generated HTML + static assets)
   _headers           Cloudflare Pages headers
 ```
 
+## Link downloader (server/)
+
+`/video-downloader/` lets visitors paste a TikTok, Instagram, Facebook, X, Pinterest, Reddit, Dailymotion, Threads or SoundCloud link and get an MP4 or MP3. **YouTube is deliberately blocked**, and so is yt-dlp's generic extractor, so the server can't be pointed at arbitrary URLs.
+
+Unlike the converter tools, this needs a backend: `server/server.mjs` (no npm deps) wraps **yt-dlp** + **ffmpeg**.
+
+```
+winget install yt-dlp.yt-dlp        # also pulls in FFmpeg
+node server/server.mjs              # API on http://localhost:8787
+```
+
+Pages call the API at `API_URL` (build-time env, default `http://localhost:8787`). If the API is down, the page shows a friendly "service offline" message.
+
+Server env: `PORT`, `ALLOWED_ORIGINS` (comma list for CORS, default `*`), `MAX_FILESIZE` (default `500M`), `MAX_JOBS` (concurrent downloads, default 3), `YTDLP`, `FFMPEG_DIR`. Built-in limits: 30 requests / 10 min per IP, 30 s info timeout, 10 min download timeout; temp files are deleted after each download.
+
+**Hosting later:** `server/Dockerfile` runs on any ~$5–8/month VPS (Hetzner, Contabo). Put it behind Cloudflare, set `ALLOWED_ORIGINS=https://vid2tune.com`, and build the site with `API_URL=https://api.vid2tune.com`. **Rebuild the image weekly** — sites change constantly and old yt-dlp versions break.
+
+**What to expect:** tested working on Reddit, Pinterest and Dailymotion. Vimeo now needs a login for most videos. TikTok and Instagram often block or rate-limit server IPs, and results depend on where the server runs — private posts, stories and login-only content will never work (by design; the server uses no accounts or cookies).
+
 ## Commands
 
 ```

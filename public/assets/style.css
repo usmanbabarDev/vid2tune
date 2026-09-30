@@ -188,3 +188,33 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 @media (max-width: 640px) {
   .langs { width: 100%; padding-bottom: 8px; }
 }
+
+/* ---------- link downloader ---------- */
+.link-form { display: flex; gap: 10px; }
+.link-form input {
+  flex: 1; min-width: 0; font: inherit; font-size: 16px; color: var(--text); background: var(--surface-2);
+  border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px;
+}
+.link-form .btn-primary { margin-inline-start: 0; min-width: 140px; }
+.link-sites { color: var(--muted); font-size: 13px; margin: 10px 0 0; text-align: center; }
+.link-status { min-height: 22px; margin: 12px 0 0; font-size: 14px; color: var(--muted); text-align: center; }
+.link-status.is-error { color: var(--err); }
+.link-status:empty { display: none; }
+.link-result { display: grid; grid-template-columns: 160px 1fr; gap: 16px; margin-top: 16px; padding: 14px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface-2); }
+.link-thumb { width: 160px; aspect-ratio: 9 / 12; object-fit: cover; border-radius: 8px; background: var(--border); }
+.link-title { margin: 0 0 4px; font-size: 16px; line-height: 1.4; overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.link-meta { margin: 0 0 12px; font-size: 13px; color: var(--muted); }
+.link-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 8px; }
+.link-row select { min-width: 100px; }
+.link-row .btn-download { min-width: 160px; padding: 10px 16px; }
+.link-row .btn-download:disabled { opacity: .5; cursor: not-allowed; }
+.link-progress { margin-top: 12px; }
+.link-progress.is-waiting .progress-bar { width: 30% !important; animation: v2t-wait 1.2s ease-in-out infinite alternate; }
+@keyframes v2t-wait { from { transform: translateX(-100%); } to { transform: translateX(330%); } }
+@media (prefers-reduced-motion: reduce) { .link-progress.is-waiting .progress-bar { animation: none; width: 100% !important; opacity: .4; } }
+@media (max-width: 640px) {
+  .link-form { flex-direction: column; }
+  .link-result { grid-template-columns: 1fr; }
+  .link-thumb { width: 100%; aspect-ratio: 16 / 9; }
+  .link-row select, .link-row .btn-download { flex: 1; }
+}

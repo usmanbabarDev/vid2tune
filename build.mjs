@@ -14,6 +14,8 @@ const YEAR = 2026;
 const OUT = join(dirname(fileURLToPath(import.meta.url)), 'public');
 // Set BASE_PATH (e.g. "/vid2tune") when the site is served from a sub-folder, like GitHub Pages.
 const BASE = (process.env.BASE_PATH || '').replace(/\/$/, '');
+// Where the link-downloader API (server/server.mjs) runs. Empty = same origin as the site.
+const API_URL = (process.env.API_URL ?? 'http://localhost:8787').replace(/\/$/, '');
 
 // English lives at the root; other languages under /<code>/.
 const LANGS = { en, ur, hi, ar };
@@ -29,8 +31,9 @@ const TOOLS = {
   webm: { slug: 'webm-to-mp3/', mode: 'single', format: 'mp3' },
   trim: { slug: 'audio-trimmer/', mode: 'trim', format: 'mp3' },
   ringtone: { slug: 'ringtone-maker/', mode: 'trim', format: 'mp3', ringtone: true },
+  download: { slug: 'video-downloader/', mode: 'link' },
 };
-const NAV_KEYS = ['home', 'batch', 'trim', 'ringtone'];
+const NAV_KEYS = ['home', 'download', 'batch', 'trim', 'ringtone'];
 
 const INFO_PAGES = [
   {
@@ -39,7 +42,7 @@ const INFO_PAGES = [
     description: 'vid2tune is a free, private toolkit for turning video into audio — built to run entirely in your browser.',
     html: `<h1>About vid2tune</h1>
 <p>Most online converters upload your files to a server and cover the page in pop-ups and fake download buttons. vid2tune was built to be the opposite: clean, fast and private.</p>
-<p>Every tool runs inside your browser using the Web Audio API, the LAME MP3 encoder and your browser’s built-in AAC encoder. Your files are never uploaded or stored anywhere.</p>
+<p>The converter, trimmer and ringtone tools run inside your browser using the Web Audio API, the LAME MP3 encoder and your browser’s built-in AAC encoder — your files are never uploaded. The <a href="/video-downloader/">video downloader</a> fetches public posts from supported sites on our server and passes them straight to you without keeping a copy.</p>
 <p>vid2tune is available in English, <a href="/ur/">اردو</a>, <a href="/hi/">हिन्दी</a> and <a href="/ar/">العربية</a>.</p>
 <p>Questions or ideas? Email <a href="mailto:hello@vid2tune.com">hello@vid2tune.com</a>.</p>`,
   },
@@ -50,7 +53,9 @@ const INFO_PAGES = [
     html: `<h1>Privacy Policy</h1>
 <p><em>Last updated: 30 September ${YEAR}</em></p>
 <h2>Your files</h2>
-<p>Files you open in vid2tune are processed entirely on your device. They are not uploaded, stored or seen by us.</p>
+<p>Files you open in the converter, trimmer and ringtone tools are processed entirely on your device. They are not uploaded, stored or seen by us.</p>
+<h2>Video downloader</h2>
+<p>When you use the video downloader, the link you paste is sent to our server, which fetches the public video and streams it to you. The downloaded file is deleted from the server as soon as it has been sent. We keep basic server logs (IP address, time and requested link) for up to 7 days to prevent abuse.</p>
 <h2>Analytics and advertising</h2>
 <p>We may use privacy-respecting analytics and, in future, advertising partners such as Google AdSense to keep the service free. These partners may use cookies to measure visits and show ads. Where required by law (for example in the EU/UK), we will ask for your consent first. You can learn how Google uses data at <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">policies.google.com/technologies/partner-sites</a>.</p>
 <h2>Contact</h2>
@@ -64,7 +69,9 @@ const INFO_PAGES = [
 <p><em>Last updated: 30 September ${YEAR}</em></p>
 <p>vid2tune is provided free of charge and “as is”, without warranties of any kind.</p>
 <h2>Acceptable use</h2>
-<p>Only convert files that you own or have the right to use. You are responsible for respecting copyright and the terms of any platform your content came from. vid2tune does not download content from YouTube or other websites.</p>
+<p>Only convert or download content that you own or have the right to use. You are responsible for respecting copyright and the terms of any platform your content came from.</p>
+<h2>Video downloader</h2>
+<p>The video downloader works only with public posts on the supported sites listed on its page, and does not support YouTube. vid2tune does not host or store any third-party content. Copyright holders who believe the service is being misused can contact <a href="mailto:hello@vid2tune.com">hello@vid2tune.com</a>.</p>
 <h2>Liability</h2>
 <p>To the fullest extent allowed by law, vid2tune is not liable for any loss arising from use of the service.</p>`,
   },
@@ -151,7 +158,39 @@ ${script}
 `;
 }
 
+function linkWidget(lang) {
+  const { ui: u } = LANGS[lang];
+  const kbps = [128, 192, 256, 320].map((k) => `<option value="${k}"${k === 192 ? ' selected' : ''}>${k} kbps</option>`).join('');
+  return `<section class="tool" data-link-tool data-api="${esc(API_URL)}" aria-label="${esc(u.linkLabel)}">
+  <form class="link-form" novalidate>
+    <label class="visually-hidden" for="link-url">${esc(u.linkLabel)}</label>
+    <input id="link-url" type="url" inputmode="url" autocomplete="off" dir="ltr" placeholder="${esc(u.linkPlaceholder)}" required>
+    <button type="submit" class="btn-primary">${esc(u.getVideo)}</button>
+  </form>
+  <p class="link-sites">${esc(u.linkSites)}</p>
+  <p class="link-status" aria-live="polite"></p>
+  <div class="link-result" hidden>
+    <img class="link-thumb" alt="" referrerpolicy="no-referrer">
+    <div>
+      <h3 class="link-title" dir="auto"></h3>
+      <p class="link-meta" dir="auto"></p>
+      <div class="link-row link-video-row">
+        <select id="link-q" dir="ltr" aria-label="${esc(u.quality)}"></select>
+        <button type="button" id="link-video" class="btn-download">${esc(u.dlVideo)}</button>
+      </div>
+      <div class="link-row">
+        <select id="link-kbps" dir="ltr" aria-label="${esc(u.quality)}">${kbps}</select>
+        <button type="button" id="link-audio" class="btn-download">${esc(u.dlAudio)}</button>
+      </div>
+      <div class="progress link-progress" hidden><div class="progress-bar"></div></div>
+    </div>
+  </div>
+</section>
+<p class="privacy-note">${esc(u.linkNote)}</p>`;
+}
+
 function toolWidget(lang, { mode, format, ringtone }) {
+  if (mode === 'link') return linkWidget(lang);
   const { ui: u, runtime: r } = LANGS[lang];
   const multiple = mode === 'batch' ? ' multiple' : '';
   const dzTitle = mode === 'batch' ? u.dzBatch : mode === 'trim' ? u.dzTrim : u.dzSingle;
@@ -236,7 +275,8 @@ function toolPage(lang, key) {
       mainEntity: p.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
     },
   ];
-  const script = `<script>window.V2T_I18N = ${safeJson(L.runtime)};</script>\n<script src="/assets/app.js" defer></script>`;
+  const js = TOOLS[key].mode === 'link' ? 'link.js' : 'app.js';
+  const script = `<script>window.V2T_I18N = ${safeJson(L.runtime)};</script>\n<script src="/assets/${js}" defer></script>`;
   return layout({ lang, key, path, title: p.title, description: p.description, main, jsonLd, script });
 }
 

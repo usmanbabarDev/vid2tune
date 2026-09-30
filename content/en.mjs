@@ -2,7 +2,7 @@
 export const meta = { name: 'English', dir: 'ltr' };
 
 export const ui = {
-  nav: { home: 'MP4 to MP3', batch: 'Batch', trim: 'Trimmer', ringtone: 'Ringtone' },
+  nav: { home: 'MP4 to MP3', batch: 'Batch', trim: 'Trimmer', ringtone: 'Ringtone', download: "Downloader" },
   badges: ['Free', 'No upload', 'No sign-up', 'No watermark'],
   dzSingle: 'Choose a video or drop it here',
   dzBatch: 'Choose videos or drop them here',
@@ -25,6 +25,13 @@ export const ui = {
   privacy: 'Privacy',
   terms: 'Terms',
   contact: 'Contact',
+  linkPlaceholder: "Paste a TikTok, Instagram, Facebook or X link",
+  getVideo: "Get video",
+  linkSites: "Works with TikTok · Instagram · Facebook · X · Pinterest · Reddit — not YouTube",
+  linkLabel: "Video link",
+  dlVideo: "Download MP4",
+  dlAudio: "Download MP3",
+  linkNote: "🔒 We fetch the public video and hand it straight to you — nothing is stored.",
   home: 'vid2tune home',
 };
 
@@ -45,12 +52,31 @@ export const runtime = {
   stop: 'Stop',
   downloadAll: 'Download all (ZIP)',
   zipping: 'Preparing ZIP…',
+  fetching: "Fetching video…",
+  preparing: "Preparing your {fmt}… this can take up to a minute.",
+  downloadingPct: "Downloading… {pct}%",
+  saved: "Saved: {name}",
+  offline: "The download service is offline right now. Please try again later.",
+  err_bad_url: "That doesn’t look like a link. Copy the full address and try again.",
+  err_youtube: "YouTube links aren’t supported.",
+  err_unsupported: "This site isn’t supported yet. Try TikTok, Instagram, Facebook, X, Pinterest or Reddit.",
+  err_private: "This post is private or needs a login, so it can’t be downloaded.",
+  err_too_big: "This video is too large to download here.",
+  err_no_video: "No downloadable video was found at that link.",
+  err_gone: "That post seems to have been removed.",
+  err_busy: "The server is busy — please try again in a minute.",
+  err_rate: "Too many requests — please wait a few minutes.",
+  err_timeout: "The site took too long to respond. Please try again.",
+  err_no_ytdlp: "The download service is offline right now. Please try again later.",
+  err_blocked: "This site blocks downloads of this post from our server’s region. Try another post.",
+  err_failed: "Couldn’t fetch that video. Please try again later.",
   errDecode: 'Couldn’t read audio from this file. It may have no sound track, or use a codec this browser can’t open — try Chrome or Edge.',
   errMemory: 'This file is too long for your device’s memory. Try a shorter clip.',
   errGeneric: 'Conversion failed: {msg}',
 };
 
 export const tools = {
+  download: ["Video downloader","Paste a link, get MP4 or MP3"],
   home: ['MP4 to MP3', 'Convert a video to MP3'],
   batch: ['Batch MP4 to MP3', 'Convert many videos at once'],
   extract: ['Extract audio', 'Pull the sound out of any video'],
@@ -69,6 +95,45 @@ const COMMON_FAQ = [
 ];
 
 export const pages = {
+  download: {
+    "title": "Video Downloader — Save TikTok, Instagram & Facebook Videos as MP4 or MP3 | vid2tune",
+    "description": "Paste a TikTok, Instagram, Facebook, X or Pinterest link and download the video as MP4 or just the audio as MP3. Free, no sign-up, no watermark added.",
+    "h1": "Video Downloader",
+    "lead": "Paste a link from TikTok, Instagram, Facebook, X and more — get the video as MP4 or the sound as MP3.",
+    "steps": [
+      [
+        "Copy the link",
+        "Tap Share → Copy link in the app."
+      ],
+      [
+        "Paste it here",
+        "We find the video and show a preview."
+      ],
+      [
+        "Pick MP4 or MP3",
+        "Choose the quality and save it to your device."
+      ]
+    ],
+    "body": "<p>Save your own Reels, TikToks and posts to repost, edit or back up — or grab just the audio as an MP3. Only public posts can be downloaded.</p>\n<p><strong>Please respect creators:</strong> download only your own content or content you have permission to use.</p>",
+    "faq": [
+      [
+        "Which sites are supported?",
+        "TikTok, Instagram, Facebook, X (Twitter), Pinterest, Reddit, Dailymotion, Threads and SoundCloud. YouTube is not supported."
+      ],
+      [
+        "Why did my link fail?",
+        "Private posts, stories and anything that needs a login can’t be downloaded. Check that the post is public and the link is complete."
+      ],
+      [
+        "Do you keep a copy of the video?",
+        "No. The video is fetched, sent to you and deleted from our server straight away."
+      ],
+      [
+        "Is it free?",
+        "Yes — no sign-up and no watermark added."
+      ]
+    ]
+  },
   home: {
     title: 'MP4 to MP3 Converter — Free, Private, No Upload | vid2tune',
     description: 'Convert MP4 to MP3 online for free. Runs in your browser — no upload, no sign-up, no watermark. Choose 128–320 kbps quality.',
